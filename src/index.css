@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Floating Hearts Animation */
+.floating-heart {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  z-index: 5;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  will-change: transform, opacity;
+}
+
+/* Ensure Press Start 2P font is loaded and applied */
+@font-face {
+  font-family: 'Press Start 2P';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/pressstart2p/v15/e3t4euO8T-267oIAQAu6jDQyK3nVivM.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+.noscroll {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.intro {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 250px;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.gridMotion-container {
+  gap: 0.3rem;
+  flex: none;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: 100%;
+  transform: rotate(-15deg);
+  transform-origin: center center;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.row {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(7, 1fr);
+  will-change: transform, filter;
+}
+
+.row__item {
+  position: relative;
+  aspect-ratio: 1;
+  min-height: 60px;
+  min-width: 60px;
+}
+
+.row__item-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  opacity: 0.8;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.row__item-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.row__item-content {
+  padding: 0.5rem;
+  text-align: center;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: inherit;
+}
+
+.fullview {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.fullview .row__item-inner {
+  border-radius: 0px;
+}
+
+/* Pixel Art Styling */
+.pixel-text {
+  font-family: 'Press Start 2P', 'Courier New', monospace !important;
+  font-weight: 400;
+  text-rendering: optimizeSpeed;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* Force Press Start 2P font on afterparty page elements */
+.pixel-text-large,
+.pixel-text-medium,
+.pixel-text-small,
+.pixel-text-xs,
+.pixel-button,
+.pixel-form-input {
+  font-family: 'Press Start 2P', 'Courier New', monospace !important;
+}
+
+.pixel-text-large {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.pixel-text-medium {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.pixel-text-small {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.pixel-text-xs {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.pixel-image {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+.pixel-border {
+  border-style: solid;
+  border-image: none;
+  border-radius: 8px;
+}
+
+.pixel-button {
+  image-rendering: pixelated;
+  text-rendering: optimizeSpeed;
+  border-radius: 8px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.pixel-form-input {
+  font-family: 'Press Start 2P', 'Courier New', monospace !important;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  border-radius: 4px;
+}
+
+.pixel-form-input::placeholder {
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+/* Ensure Press Start 2P is applied to all afterparty page text */
+.min-h-screen .pixel-text,
+.min-h-screen .pixel-text-large,
+.min-h-screen .pixel-text-medium,
+.min-h-screen .pixel-text-small,
+.min-h-screen .pixel-text-xs,
+.min-h-screen .pixel-button,
+.min-h-screen .pixel-form-input {
+  font-family: 'Press Start 2P', 'Courier New', monospace !important;
+}
+
+/* Mobile specific adjustments */
+@media (max-width: 768px) {
+  .gridMotion-container {
+    gap: 0.2rem;
+  }
+  
+  .row {
+    gap: 0.6rem;
+  }
+  
+  .row__item {
+    min-height: 80px;
+    min-width: 80px;
+  }
+  
+  .row__item-inner {
+    border-radius: 6px;
+    font-size: 2rem;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+  }
+  
+  .row__item-content {
+    padding: 0.5rem;
+  }
+
+  .pixel-text-large {
+    font-size: 1.5rem;
+  }
+
+  .pixel-text-medium {
+    font-size: 1rem;
+  }
+
+  .pixel-text-small {
+    font-size: 0.75rem;
+  }
+
+  .pixel-text-xs {
+    font-size: 0.6rem;
+  }
+
+  .pixel-form-input {
+    font-size: 0.875rem;
+  }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+  .gridMotion-container {
+    gap: 0.15rem;
+  }
+  
+  .row {
+    gap: 0.5rem;
+  }
+  
+  .row__item {
+    min-height: 70px;
+    min-width: 70px;
+  }
+  
+  .row__item-inner {
+    border-radius: 6px;
+    font-size: 1.8rem;
+  }
+  
+  .row__item-content {
+    padding: 0.4rem;
+  }
+
+  .pixel-text-large {
+    font-size: 1.25rem;
+  }
+
+  .pixel-text-medium {
+    font-size: 0.875rem;
+  }
+
+  .pixel-text-small {
+    font-size: 0.625rem;
+  }
+
+  .pixel-text-xs {
+    font-size: 0.5rem;
+  }
+
+  .pixel-form-input {
+    font-size: 0.75rem;
+  }
+}
+
+@keyframes gentle-pulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
