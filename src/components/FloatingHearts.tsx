@@ -8,7 +8,8 @@ const FloatingHearts: React.FC = () => {
     if (!containerRef.current) return;
 
     const container = containerRef.current;
-    const hearts = ['💕', '💖', '💗', '💝', '💘', '💞', '💓', '❤️', '💜'];
+    // const hearts = ['💕', '💖', '💗', '💝', '💘', '💞', '💓', '❤️', '💜'];
+    const hearts = ['💍', '🥂', '💍', '🥂' ];
     
     const createHeart = () => {
       const heart = document.createElement('div');

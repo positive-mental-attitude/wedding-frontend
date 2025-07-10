@@ -93,8 +93,8 @@
   justify-content: center;
   color: white;
   font-size: 1.5rem;
-  opacity: 0.8;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  opacity: 1;
+  border: 2px solid var(--border-1); /* default, will be overridden below */
 }
 
 .row__item-img {
@@ -224,6 +224,13 @@
   font-family: 'Press Start 2P', 'Courier New', monospace !important;
 }
 
+/* Custom focus/active border color for RSVP form fields */
+input:focus, textarea:focus, input:active, textarea:active {
+  outline: none !important;
+  border-color: #f58549 !important;
+  box-shadow: 0 0 0 2px #f5854933 !important; /* subtle glow, optional */
+}
+
 /* Mobile specific adjustments */
 @media (max-width: 768px) {
   .gridMotion-container {
@@ -235,14 +242,13 @@
   }
   
   .row__item {
-    min-height: 80px;
-    min-width: 80px;
+    min-height: 130px;
+    min-width: 130px;
   }
   
   .row__item-inner {
     border-radius: 6px;
     font-size: 2rem;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
   }
   
   .row__item-content {
@@ -281,8 +287,8 @@
   }
   
   .row__item {
-    min-height: 70px;
-    min-width: 70px;
+    min-height: 110px;
+    min-width: 110px;
   }
   
   .row__item-inner {

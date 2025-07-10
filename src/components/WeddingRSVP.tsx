@@ -152,7 +152,7 @@ function WeddingRSVP() {
   const getFormTitle = () => {
     switch (rsvpStatus) {
       case 'yes':
-        return "Wonderful! We can't wait to celebrate with you.";
+        return "Yay! We can't wait to celebrate with you.";
       case 'no':
         return "We understand and appreciate you letting us know.";
       case 'maybe':
@@ -176,28 +176,35 @@ function WeddingRSVP() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-slate-800 to-black text-white overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-[#F6E3BA] via-[#FFEFCB] to-[#FFFCC7] text-white overflow-hidden">
       <FloatingHearts />
       {/* Main Content */}
       <div className="relative z-20 container mx-auto px-4 py-8 max-w-6xl">
         {/* Header */}
         <header className="text-center mb-8 md:mb-12">
-          <div className="flex justify-center items-center mb-6">
-            <Heart className="w-6 h-6 md:w-8 md:h-8 text-emerald-400 mr-3" />
-            <h1 className="text-3xl md:text-6xl font-bold bg-gradient-to-r from-emerald-400 via-cyan-300 to-violet-400 bg-clip-text text-transparent">
-              Paul and Jazreel's Wedding
-            </h1>
-            <Heart className="w-6 h-6 md:w-8 md:h-8 text-emerald-400 ml-3" />
-          </div>
-          <div className="w-24 h-1 bg-gradient-to-r from-emerald-400 via-cyan-300 to-violet-400 mx-auto rounded-full"></div>
+        <br></br>
+        <h5
+          className="md:text-xl text-black/80"
+          style={{ fontFamily: '"Arial", serif' }}
+        >
+          THE WEDDING OF
+        </h5>
+        <br />
+        <h1
+          className="text-6xl md:text-8xl font-bold text-black/80"
+          style={{ fontFamily: '"Boston Angel", serif' }}
+        >
+          PAUL & JAZREEL
+        </h1>
+        {/* <div className="w-24 h-1 bg-gradient-to-r from-[#CFB284] via-[#DFCAA0] to-[#F6E3BA] mx-auto rounded-full"></div> */}
         </header>
 
         {/* Featured Wedding Photo with GridMotion - Much Larger on Mobile */}
         <div className="flex justify-center mb-8 md:mb-12">
           <div className="relative group w-full max-w-6xl">
-            <div className="absolute -inset-1 bg-gradient-to-r from-emerald-400 via-cyan-300 to-violet-400 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
-            <div className="relative bg-gray-900 rounded-2xl p-2">
-              <div className="w-full h-[500px] md:h-[600px] lg:h-[700px] rounded-xl shadow-2xl overflow-hidden">
+          <div className="absolute"></div>            
+            <div className="relative rounded-2xl p-1 border-4" style={{ borderColor: '#772f1a', backgroundColor: '#fff8e1' }}>
+              <div className="w-full h-[500px] md:h-[600px] lg:h-[700px] overflow-hidden">
                 <GridMotion items={gridItems} />
               </div>
             </div>
@@ -205,97 +212,161 @@ function WeddingRSVP() {
         </div>
 
         {/* Wedding Details */}
-        <div className="bg-gray-800/70 backdrop-blur-sm rounded-2xl p-6 md:p-8 mb-8 md:mb-12 border border-gray-700/50">
-          <h2 className="text-xl md:text-3xl font-semibold text-center mb-6 md:mb-8 text-gray-100">
-            Join us for our special day
+        <div
+          className="rounded-2xl p-6 md:p-8 mb-8 md:mb-12 border"
+          style={{
+            background: 'rgb(101, 36, 10)', // Gold
+            
+            boxShadow: '0 6px 24px 0 rgba(242,166,90,0.10)', // Orange shadow
+            opacity: 0.85
+          }}
+        >
+          <h2
+            className="text-2xl md:text-5xl font-semibold text-center mb-8 md:mb-12"
+            style={{ color: '', fontFamily: '"Boston Angel", serif' }}
+          >
+            JOIN US FOR OUR SPECIAL DAY
           </h2>
-          
+
           <div className="grid md:grid-cols-3 gap-4 md:gap-6 text-center">
-            <div className="flex flex-col items-center p-4 md:p-6 bg-gray-700/40 rounded-xl border border-gray-600/30 hover:border-emerald-400/50 transition-all duration-300">
-              <Calendar className="w-6 h-6 md:w-8 md:h-8 text-emerald-400 mb-3" />
-              <h3 className="text-base md:text-lg font-semibold mb-2 text-gray-200">Date</h3>
-              <p className="text-sm md:text-base text-gray-300">27 September 2025</p>
+            {/* Card */}
+            <div
+              className="flex flex-col items-center p-4 md:p-6 rounded-xl border transition-all duration-300"
+              style={{
+                background: '#fff8e1', // Very light gold
+                
+              }}
+            >
+              <Calendar className="w-6 h-6 md:w-8 md:h-8 mb-3" style={{ color: 'rgb(101, 36, 10)' }} />
+              <h3
+                className="text-lg md:text-3xl font-semibold mb-4"
+                style={{ color: '#772f1a', fontFamily: '"Boston Angel", serif', fontWeight: 'bold' }}
+              >
+                Date
+              </h3>
+              <p
+                className="text-base md:text-xl"
+                style={{ color: '#585123', fontFamily: '"Boston Angel", serif' }}
+              >
+                27 September 2025
+              </p>
             </div>
-            
-            <div className="flex flex-col items-center p-4 md:p-6 bg-gray-700/40 rounded-xl border border-gray-600/30 hover:border-emerald-400/50 transition-all duration-300">
-              <MapPin className="w-6 h-6 md:w-8 md:h-8 text-emerald-400 mb-3" />
-              <h3 className="text-base md:text-lg font-semibold mb-2 text-gray-200">Venue</h3>
-              <p className="text-sm md:text-base text-gray-300">Parkroyal Collection Marina Bay</p>
+            <div
+              className="flex flex-col items-center p-4 md:p-6 rounded-xl border transition-all duration-300"
+              style={{
+                background: '#fff8e1',
+              }}
+            >
+              <MapPin className="w-6 h-6 md:w-8 md:h-8 mb-3" style={{ color: 'rgb(101, 36, 10)' }} />
+              <h3
+                className="text-lg md:text-3xl font-semibold mb-4"
+                style={{ color: '#772f1a', fontFamily: '"Boston Angel", serif', fontWeight: 'bold' }}
+              >
+                Venue
+              </h3>
+              <p
+                className="text-base md:text-xl"
+                style={{ color: '#585123', fontFamily: '"Boston Angel", serif' }}
+              >
+                Parkroyal Collection Marina Bay
+              </p>
             </div>
-            
-            <div className="flex flex-col items-center p-4 md:p-6 bg-gray-700/40 rounded-xl border border-gray-600/30 hover:border-emerald-400/50 transition-all duration-300">
-              <Clock className="w-6 h-6 md:w-8 md:h-8 text-emerald-400 mb-3" />
-              <h3 className="text-base md:text-lg font-semibold mb-2 text-gray-200">Time</h3>
-              <p className="text-sm md:text-base text-gray-300">6:30 PM</p>
+            <div
+              className="flex flex-col items-center p-4 md:p-6 rounded-xl border transition-all duration-300"
+              style={{
+                background: '#fff8e1',
+              }}
+            >
+              <Clock className="w-6 h-6 md:w-8 md:h-8 mb-3" style={{ color: 'rgb(101, 36, 10)' }} />
+              <h3
+                className="text-lg md:text-3xl font-semibold mb-4"
+                style={{ color: '#772f1a', fontFamily: '"Boston Angel", serif', fontWeight: 'bold' }}
+              >
+                Time
+              </h3>
+              <p
+                className="text-base md:text-xl"
+                style={{ color: '#585123', fontFamily: '"Boston Angel", serif' }}
+              >
+                Reception starts at 6:30 PM<br />Please be seated by 7.15 PM
+              </p>
             </div>
           </div>
         </div>
 
         {/* RSVP Section */}
         {!isSubmitted ? (
-          <div className="bg-gray-800/70 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-gray-700/50">
-            <h2 className="text-xl md:text-3xl font-semibold text-center mb-6 md:mb-8 text-gray-100">
+          <div
+            className="rounded-2xl p-6 md:p-8 border"
+            style={{
+              background: 'rgb(101, 36, 10)',
+              boxShadow: '0 6px 24px 0 rgba(242,166,90,0.10)',
+              opacity: 0.85
+            }}
+          >
+            <h2 className="text-2xl md:text-5xl text-center mb-8 md:mb-12" style={{ color: '#fff', fontFamily: '"Boston Angel", serif', fontWeight: 'bold' }}>
               Will you be joining us?
             </h2>
-            
             {!showForm ? (
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                {/* Yes Button */}
                 <button
                   onClick={() => handleRsvpClick('yes')}
-                  className={`flex items-center px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-base md:text-lg transition-all duration-300 transform hover:scale-105 ${
+                  className={`flex items-center px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg transition-all duration-300 transform hover:scale-105 ${
                     rsvpStatus === 'yes' 
-                      ? 'bg-green-500 text-white shadow-lg shadow-green-500/25' 
-                      : 'bg-gray-700 text-gray-200 hover:bg-green-500 hover:text-white hover:shadow-lg hover:shadow-green-500/25'
+                      ? 'bg-[#f2a65a] text-white shadow-lg' 
+                      : 'bg-[#f58549] text-white border border-[#f2a65a] hover:bg-[#f2a65a] hover:text-white hover:shadow-lg'
                   }`}
+                  style={{ fontFamily: '"Boston Angel", serif', fontWeight: 'bold', background: rsvpStatus === 'yes' ? 'linear-gradient(90deg, #f2a65a 0%, #f58549 100%)' : undefined }}
                 >
-                  <Check className="w-5 h-5 md:w-6 md:h-6 mr-2" />
+                  <Check className="w-5 h-5 md:w-6 md:h-6 mr-2" style={{ color: '#fff' }} />
                   Yes
                 </button>
-                
+                {/* No Button */}
                 <button
                   onClick={() => handleRsvpClick('no')}
-                  className={`flex items-center px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-base md:text-lg transition-all duration-300 transform hover:scale-105 ${
+                  className={`flex items-center px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg transition-all duration-300 transform hover:scale-105 ${
                     rsvpStatus === 'no' 
-                      ? 'bg-red-500 text-white shadow-lg shadow-red-500/25' 
-                      : 'bg-gray-700 text-gray-200 hover:bg-red-500 hover:text-white hover:shadow-lg hover:shadow-red-500/25'
+                      ? 'bg-[#772f1a] text-white shadow-lg' 
+                      : 'bg-[#f58549] text-white border border-[#f2a65a] hover:bg-[#772f1a] hover:text-white hover:shadow-lg'
                   }`}
+                  style={{ fontFamily: '"Boston Angel", serif', fontWeight: 'bold', background: rsvpStatus === 'no' ? 'linear-gradient(90deg, #772f1a 0%, #f58549 100%)' : undefined }}
                 >
-                  <X className="w-5 h-5 md:w-6 md:h-6 mr-2" />
+                  <X className="w-5 h-5 md:w-6 md:h-6 mr-2" style={{ color: '#fff' }} />
                   No
                 </button>
-                
+                {/* Maybe Button */}
                 <button
                   onClick={() => handleRsvpClick('maybe')}
-                  className={`flex items-center px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-base md:text-lg transition-all duration-300 transform hover:scale-105 ${
+                  className={`flex items-center px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg transition-all duration-300 transform hover:scale-105 ${
                     rsvpStatus === 'maybe' 
-                      ? 'bg-yellow-500 text-white shadow-lg shadow-yellow-500/25' 
-                      : 'bg-gray-700 text-gray-200 hover:bg-yellow-500 hover:text-white hover:shadow-lg hover:shadow-yellow-500/25'
+                      ? 'bg-[#eec170] text-white shadow-lg' 
+                      : 'bg-[#f58549] text-white border border-[#f2a65a] hover:bg-[#eec170] hover:text-white hover:shadow-lg'
                   }`}
+                  style={{ fontFamily: '"Boston Angel", serif', fontWeight: 'bold', background: rsvpStatus === 'maybe' ? 'linear-gradient(90deg, #eec170 0%, #f2a65a 100%)' : undefined }}
                 >
-                  <HelpCircle className="w-5 h-5 md:w-6 md:h-6 mr-2" />
+                  <HelpCircle className="w-5 h-5 md:w-6 md:h-6 mr-2" style={{ color: '#fff' }} />
                   Maybe
                 </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-6">
                 <div className="text-center mb-6">
-                  <p className={`font-semibold text-lg ${
-                    rsvpStatus === 'yes' ? 'text-green-400' : 
-                    rsvpStatus === 'no' ? 'text-red-400' : 'text-yellow-400'
-                  }`}>
+                  <p className="font-semibold text-lg md:text-3xl" style={{ fontFamily: '"Boston Angel", serif' }}>
                     {getFormTitle()}
                   </p>
-                  <p className="text-gray-300 mt-2">{getFormSubtitle()}</p>
+                  <p className="mt-2 text-base md:text-2xl" style={{ color: '#fff', fontFamily: '"Boston Angel", serif' }}>
+                    {getFormSubtitle()}
+                  </p>
                 </div>
-
                 {submitError && (
-                  <div className="bg-red-500/20 border border-red-500/50 rounded-lg p-4 mb-6">
+                  <div className="bg-red-400/10 border border-red-400/50 rounded-lg p-4 mb-6">
                     <p className="text-red-400 text-sm">{submitError}</p>
                   </div>
                 )}
-                
+                {/* Form Fields - use light backgrounds and soft borders */}
                 <div>
-                  <label htmlFor="fullName" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="fullName" className="block text-lg md:text-2xl font-medium mb-2" style={{ color: 'rgb(255, 255, 255)', fontFamily: '"Boston Angel", serif', fontWeight: 'bold' }}>
                     Full Name *
                   </label>
                   <input
@@ -306,15 +377,21 @@ function WeddingRSVP() {
                     onChange={handleInputChange}
                     required
                     disabled={isSubmitting}
-                    className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full px-4 py-3 rounded-lg border text-lg md:text-2xl"
+                    style={{
+                      background: '#FFEFCB',
+                      borderColor: '#E5DED4',
+                      color: '#222',
+                      fontFamily: '"Boston Angel", serif',
+                      fontWeight: 'bold'
+                    }}
                     placeholder="Enter your full name"
                   />
                 </div>
-
                 {rsvpStatus === 'yes' && (
                   <>
                     <div>
-                      <label htmlFor="telegramUsername" className="block text-sm font-medium text-gray-300 mb-2">
+                      <label htmlFor="telegramUsername" className="block text-lg md:text-2xl font-medium mb-2" style={{ color: '#fff', fontFamily: '"Boston Angel", serif', fontWeight: 'bold' }}>
                         Telegram Username
                       </label>
                       <input
@@ -324,13 +401,19 @@ function WeddingRSVP() {
                         value={formData.telegramUsername}
                         onChange={handleInputChange}
                         disabled={isSubmitting}
-                        className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="w-full px-4 py-3 rounded-lg border text-lg md:text-2xl"
+                        style={{
+                          background: '#FFEFCB',
+                          borderColor: '#E5DED4',
+                          color: '#222',
+                          fontFamily: '"Boston Angel", serif',
+                          fontWeight: 'bold'
+                        }}
                         placeholder="@username"
                       />
                     </div>
-                    
                     <div>
-                      <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-300 mb-2">
+                      <label htmlFor="phoneNumber" className="block text-lg md:text-2xl font-medium mb-2" style={{ color: '#fff', fontFamily: '"Boston Angel", serif', fontWeight: 'bold' }}>
                         Phone Number *
                       </label>
                       <input
@@ -341,13 +424,19 @@ function WeddingRSVP() {
                         onChange={handleInputChange}
                         required
                         disabled={isSubmitting}
-                        className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="w-full px-4 py-3 rounded-lg border text-lg md:text-2xl"
+                        style={{
+                          background: '#FFEFCB',
+                          borderColor: '#E5DED4',
+                          color: '#222',
+                          fontFamily: '"Boston Angel", serif',
+                          fontWeight: 'bold'
+                        }}
                         placeholder="91234567"
                       />
                     </div>
-                    
                     <div>
-                      <label htmlFor="dietaryRestrictions" className="block text-sm font-medium text-gray-300 mb-2">
+                      <label htmlFor="dietaryRestrictions" className="block text-lg md:text-2xl font-medium mb-2" style={{ color: '#fff', fontFamily: '"Boston Angel", serif', fontWeight: 'bold' }}>
                         Dietary Restrictions
                       </label>
                       <textarea
@@ -357,16 +446,22 @@ function WeddingRSVP() {
                         onChange={handleInputChange}
                         rows={3}
                         disabled={isSubmitting}
-                        className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent transition-all duration-200 resize-none disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="w-full px-4 py-3 rounded-lg border resize-none text-lg md:text-2xl"
+                        style={{
+                          background: '#FFEFCB',
+                          borderColor: '#E5DED4',
+                          color: '#222',
+                          fontFamily: '"Boston Angel", serif',
+                          fontWeight: 'bold'
+                        }}
                         placeholder="Please let us know about any dietary restrictions or allergies"
                       />
                     </div>
                   </>
                 )}
-
                 {(rsvpStatus === 'no' || rsvpStatus === 'maybe') && (
                   <div>
-                    <label htmlFor="note" className="block text-sm font-medium text-gray-300 mb-2">
+                    <label htmlFor="note" className="block text-lg md:text-2xl font-medium mb-2" style={{ color: '#fff', fontFamily: '"Boston Angel", serif', fontWeight: 'bold' }}>
                       {rsvpStatus === 'no' ? 'Message (Optional)' : 'Note (Optional)'}
                     </label>
                     <textarea
@@ -376,7 +471,14 @@ function WeddingRSVP() {
                       onChange={handleInputChange}
                       rows={3}
                       disabled={isSubmitting}
-                      className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent transition-all duration-200 resize-none disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full px-4 py-3 rounded-lg border resize-none text-lg md:text-2xl"
+                      style={{
+                        background: '#FFEFCB',
+                        borderColor: '#E5DED4',
+                        color: '#222',
+                        fontFamily: '"Boston Angel", serif',
+                        fontWeight: 'bold'
+                      }}
                       placeholder={
                         rsvpStatus === 'no' 
                           ? "We'd love to hear from you! Share any thoughts or well wishes..."
@@ -385,24 +487,35 @@ function WeddingRSVP() {
                     />
                   </div>
                 )}
-                
                 <div className="flex gap-4">
                   <button
                     type="button"
                     onClick={resetForm}
                     disabled={isSubmitting}
-                    className="flex-1 px-6 py-3 bg-gray-600 text-white rounded-lg font-semibold hover:bg-gray-500 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="flex-1 px-6 py-3 rounded-lg font-semibold text-base md:text-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                    style={{
+                      background: '#E5DED4',
+                      color: '#7C6F57',
+                      fontFamily: '"Boston Angel", serif',
+                      fontSize: '1.25rem'
+                    }}
                   >
                     Back
                   </button>
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="flex-1 flex items-center justify-center px-6 py-3 bg-gradient-to-r from-emerald-500 via-cyan-500 to-violet-500 text-white rounded-lg font-semibold hover:from-emerald-600 hover:via-cyan-600 hover:to-violet-600 transition-all duration-200 transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                    className="flex-1 flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-base md:text-xl transition-all duration-200 transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                    style={{
+                      background: '#f58549',
+                      color: 'rgb(255, 255, 255)',
+                      fontFamily: '"Boston Angel", serif',
+                      fontSize: '1.25rem'
+                    }}
                   >
                     {isSubmitting ? (
                       <>
-                        <div className="w-5 h-5 mr-2 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                        <div className="w-5 h-5 mr-2 border-2 border-[#C9B18F] border-t-transparent rounded-full animate-spin"></div>
                         Submitting...
                       </>
                     ) : (
@@ -417,35 +530,67 @@ function WeddingRSVP() {
             )}
           </div>
         ) : (
-          <div className="bg-gray-800/70 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-gray-700/50 text-center">
+          <div
+            className="rounded-2xl p-6 md:p-8 border text-center"
+            style={{
+              background: '#eec170',
+              borderColor: '#f2a65a',
+              boxShadow: '0 6px 24px 0 rgba(242,166,90,0.10)',
+              opacity: 0.85
+            }}
+          >
             <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 ${
-              rsvpStatus === 'yes' ? 'bg-green-500' :
-              rsvpStatus === 'no' ? 'bg-red-500' : 'bg-yellow-500'
+              rsvpStatus === 'yes' ? 'bg-[#f2a65a]' :
+              rsvpStatus === 'no' ? 'bg-[#772f1a]' : 'bg-[#f58549]'
             }`}>
               {rsvpStatus === 'yes' && <Check className="w-8 h-8 text-white" />}
               {rsvpStatus === 'no' && <X className="w-8 h-8 text-white" />}
               {rsvpStatus === 'maybe' && <HelpCircle className="w-8 h-8 text-white" />}
             </div>
-            <h2 className="text-xl md:text-3xl font-semibold mb-4 text-gray-100">
+            <h2
+              className="text-xl md:text-3xl font-semibold mb-4"
+              style={{
+                color: '#585123',
+                fontFamily: '"Cormorant Garamond", serif'
+              }}
+            >
               Thank you for your RSVP!
             </h2>
-            <p className="text-gray-300 mb-6">
+            <p
+              className="mb-6"
+              style={{
+                color: '#772f1a',
+                fontFamily: '"Nunito", sans-serif'
+              }}
+            >
               {rsvpStatus === 'yes' && "We're so excited to celebrate with you on our special day!"}
               {rsvpStatus === 'no' && "We understand and appreciate you letting us know. You'll be missed!"}
               {rsvpStatus === 'maybe' && "We hope you'll be able to join us! Please let us know as soon as you can."}
             </p>
             <button
               onClick={resetForm}
-              className="px-6 py-3 bg-gradient-to-r from-emerald-500 via-cyan-500 to-violet-500 text-white rounded-lg font-semibold hover:from-emerald-600 hover:via-cyan-600 hover:to-violet-600 transition-all duration-200 transform hover:scale-105"
+              className="px-6 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105"
+              style={{
+                background: 'linear-gradient(90deg, #f2a65a 0%, #f58549 100%)',
+                color: '#fff',
+                fontFamily: '"Nunito", sans-serif'
+              }}
             >
               Update RSVP
             </button>
           </div>
         )}
 
+
         {/* Footer */}
         <footer className="text-center mt-8 md:mt-12 text-gray-400">
-          <p className="text-sm">
+          <p 
+            className="text-1xl md:text-2xl xl:text-3xl text-center mb-8 md:mb-12"
+            style={{
+              color: 'black',
+              fontFamily: '"Boston Angel", serif'
+            }}
+          >
             Can't wait to celebrate with you! 💕
           </p>
         </footer>
