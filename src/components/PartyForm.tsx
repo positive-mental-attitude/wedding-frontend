@@ -171,7 +171,7 @@ const PartyForm: React.FC<PartyFormProps> = ({ isOpen, onClose }) => {
               You're In!
             </h3>
             <p className="text-[#FFD9B3] pixel-text pixel-text-small leading-relaxed">
-              Bo Tah Bo Lanpa<br />Tah Liao Superstar
+              BU ZUI BU GUI
             </p>
           </div>
         )}
