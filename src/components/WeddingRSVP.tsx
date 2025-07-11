@@ -269,6 +269,8 @@ function WeddingRSVP() {
                 style={{ color: '#585123', fontFamily: '"Boston Angel", serif' }}
               >
                 Parkroyal Collection Marina Bay
+                <br></br>
+                Atrium Ballroom Level 5
               </p>
             </div>
             <div
